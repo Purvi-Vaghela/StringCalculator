@@ -49,8 +49,10 @@ To use the `StringCalculator` function, require the module and call the `add()` 
 
 ### 💻 Example
 
-```java
-StringCalculator calculator = new StringCalculator();
-int result = calculator.add("1,2,3");
-System.out.println(result); // Output: 6
+
+```javascript
+const StringCalculator = require('./StringCalculator');
+const calculator = new StringCalculator();
+const result = calculator.add("1,2,3");
+console.log(result); // Output: 6
 
