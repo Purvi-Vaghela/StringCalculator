@@ -5,6 +5,7 @@ function add(numbers) {
       return 0;
   }
 
+  // custom delimiter
   let delimiter = /[\n,]/;
 
   //"//;\n1;2" :-->>  first part: //;  second: 1;2 
