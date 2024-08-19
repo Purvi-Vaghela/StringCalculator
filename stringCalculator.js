@@ -5,8 +5,16 @@ function add(numbers) {
       return 0;
   }
 
-  // sum of multiple numbers having new line as delimiter
-  const numArray = numbers.split(/[\n,]/);
+  let delimiter = /[\n,]/;
+
+  //"//;\n1;2" :-->>  first part: //;  second: 1;2 
+  if (numbers.startsWith("//")) {
+      const parts = numbers.split("\n");
+      delimiter = new RegExp(`[${parts[0].slice(2)}]`);
+      numbers = parts[1];
+  }
+
+  const numArray = numbers.split(delimiter);
   return numArray.reduce((sum, num) => sum + parseInt(num), 0);
   
   return parseInt(numbers);
