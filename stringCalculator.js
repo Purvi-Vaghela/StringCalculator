@@ -5,7 +5,7 @@ function add(numbers) {
       return 0;
   }
 
-  // sum of two numbers
+  // sum of multiple numbers having new line as delimiter
   const numArray = numbers.split(/[\n,]/);
   return numArray.reduce((sum, num) => sum + parseInt(num), 0);
   
