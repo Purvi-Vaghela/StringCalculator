@@ -31,6 +31,9 @@ describe('String Calculator', () => {
     it('should throw an error for negative numbers', () => {
         expect(() => add("1,-2,3")).to.throw('negative numbers not allowed: -2');
     });
+    it('should show all negative numbers in message', () => {
+        expect(() => add("1,-2,-3")).to.throw('negative numbers not allowed: -2,-3');
+    });
 
     
 
