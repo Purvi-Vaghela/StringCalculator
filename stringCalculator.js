@@ -1,24 +1,25 @@
 function add(numbers) {
-
-  // Empty string and single number
+  //  Empty string and single number
   if (numbers === "") {
-      return 0;
+    return 0;
   }
-
-  // custom delimiter
+  // with delimiter
   let delimiter = /[\n,]/;
-
-  //"//;\n1;2" :-->>  first part: //;  second: 1;2 
   if (numbers.startsWith("//")) {
-      const parts = numbers.split("\n");
-      delimiter = new RegExp(`[${parts[0].slice(2)}]`);
-      numbers = parts[1];
+    const parts = numbers.split("\n");
+    delimiter = new RegExp(`[${parts[0].slice(2)}]`);
+    numbers = parts[1];
   }
 
   const numArray = numbers.split(delimiter);
+  //checking number is negative
+  const negatives = numArray.filter((num) => parseInt(num) < 0);
+
+  if (negatives.length > 0) {
+    throw `negative numbers not allowed: ${negatives.join(",")}`;
+  }
+
   return numArray.reduce((sum, num) => sum + parseInt(num), 0);
-  
-  return parseInt(numbers);
 }
 
 module.exports = { add };
